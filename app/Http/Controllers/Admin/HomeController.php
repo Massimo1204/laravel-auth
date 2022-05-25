@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::paginate(5);
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -24,7 +26,6 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -44,9 +45,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return view('admin.show', compact('post'));
     }
 
     /**
@@ -57,7 +58,6 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
