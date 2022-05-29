@@ -49,6 +49,13 @@
                                 </li>
                             @endif
                         @else
+                            <li class="me-5">
+                                <a href="{{route('admin.posts.create')}}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <button class="btn btn-success">
+                                        Create new Post
+                                    </button>
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
